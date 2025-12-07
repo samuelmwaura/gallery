@@ -1,6 +1,10 @@
 pipeline
 {
     agent any
+    tools
+    {
+        nodejs 'node'
+    }
     stages
     {
         stage("Cloning the application repo from it's Github repository.")
@@ -9,6 +13,14 @@ pipeline
             {
                 git branch:"master", url:"https://github.com/samuelmwaura/gallery.git"
             }
+        }
+        stage("Installing the dependencies of the application")
+        {
+            steps
+            {
+                sh "npm install"
+            }
+            
         }
     }
 }
