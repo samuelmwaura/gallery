@@ -38,8 +38,25 @@ pipeline
                 curl -X POST "https://api.render.com/deploy/srv-d4qrtt7diees739g80r0?key=TsPNezNb1_I"
             }
         }
-        {
-
-        }
+        
     }
+    
+    post 
+    {
+        success 
+        {
+            slackSend
+            (
+                channel: "samuel_ip1",
+                color: 'good',
+                message: 
+                
+                """
+Build ${currentBuild.fullDisplayName} Completed Successfully
+Build NUMBER: ${env.BUILD_NUMBER}
+Status: ${currentBuild.currentResult}
+
+Click here to got to site: https://gallery-tg7e.onrender.com """
+)
+    
 }
