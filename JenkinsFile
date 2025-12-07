@@ -1,0 +1,14 @@
+pipeline
+{
+    agent any
+    stages
+    {
+        stage("Cloning the application repo from it's Github repository.")
+        {
+            steps
+            {
+                git branch:"master", url:"https://github.com/samuelmwaura/gallery.git"
+            }
+        }
+    }
+}
