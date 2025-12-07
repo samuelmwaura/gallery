@@ -22,5 +22,13 @@ pipeline
             }
             
         }
+
+        stage("Running the Application Tests")
+        {
+            steps
+            {
+                sh "npm test"
+            }
+        }
     }
 }
