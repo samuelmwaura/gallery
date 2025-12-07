@@ -31,6 +31,15 @@ pipeline
             }
         }
 
-        
+        stage("Deploying the Application to Render Platform.")
+        {
+            steps
+            {
+                curl -X POST "https://api.render.com/deploy/srv-d4qrtt7diees739g80r0?key=TsPNezNb1_I"
+            }
+        }
+        {
+
+        }
     }
 }
