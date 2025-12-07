@@ -14,7 +14,7 @@ pipeline
                 git branch:"master", url:"https://github.com/samuelmwaura/gallery.git"
             }
         }
-        stage("Installing the dependencies of the application")
+        stage("Installing the dependencies and building the")
         {
             steps
             {
@@ -30,5 +30,7 @@ pipeline
                 sh "npm test"
             }
         }
+
+        
     }
 }
